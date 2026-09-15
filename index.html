@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiawAug Portfolio - Modern Gaming</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#020617',
+                        cardbg: '#0f172a',
+                        neonblue: '#2563eb',
+                        brightblue: '#38bdf8',
+                        neonpurple: '#8b5cf6',
+                        lighttext: '#f8fafc',
+                        graytext: '#94a3b8'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS for Neon, Glassmorphism, and Animations -->
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="min-h-screen flex flex-col justify-between">s
+
+    <nav class="navbar-glass sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap justify-between items-center">
+            <a href="#" onclick="switchPage('beranda')" class="logo flex items-center gap-3 logo-glow">
+                <img src="assets/img/logo-miawaug.png" alt="Logo MiawAug" class="w-11 h-11 object-contain rounded-lg border border-blue-400/40 bg-slate-900/80 p-1" onerror="this.src='https://placehold.co/44x44/0f172a/38bdf8?text=MA'">
+                <span class="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-brightblue via-purple-400 to-neonpurple bg-clip-text text-transparent">MiawAug</span>
+            </a>
+            <div class="flex flex-wrap gap-1 sm:gap-4 mt-2 md:mt-0 text-sm md:text-base font-medium">
+                <button onclick="switchPage('beranda')" id="nav-beranda" class="nav-btn transition px-3 py-2 rounded-lg text-brightblue bg-blue-950/40 border border-blue-500/30">🏠 Beranda</button>
+                <button onclick="switchPage('tentang')" id="nav-tentang" class="nav-btn transition px-3 py-2 rounded-lg text-graytext hover:text-brightblue hover:bg-blue-950/20">👤 Tentang</button>
+                <button onclick="switchPage('jaringan')" id="nav-jaringan" class="nav-btn transition px-3 py-2 rounded-lg text-graytext hover:text-brightblue hover:bg-blue-950/20">🎮 Gaming</button>
+                <button onclick="switchPage('youtube')" id="nav-youtube" class="nav-btn transition px-3 py-2 rounded-lg text-graytext hover:text-brightblue hover:bg-blue-950/20">🎥 YouTube</button>
+                <button onclick="switchPage('galeri')" id="nav-galeri" class="nav-btn transition px-3 py-2 rounded-lg text-graytext hover:text-brightblue hover:bg-blue-950/20">💡 Galeri</button>
+                <button onclick="switchPage('kontak')" id="nav-kontak" class="nav-btn transition px-3 py-2 rounded-lg text-graytext hover:text-brightblue hover:bg-blue-950/20">📬 Kontak</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <!-- ================= BERANDA ================= -->
+        <div id="page-beranda" class="page-content space-y-16 animate-fade-up">
+            <!-- Hero Section with Custom Background & Portrait -->
+            <section class="hero-bg p-8 md:p-14 flex flex-col md:flex-row items-center gap-10">
+                <div class="w-full md:w-1/2 text-center md:text-left space-y-6 z-10">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-brightblue text-xs font-semibold tracking-wide uppercase">
+                        Gaming • Entertainment • Creativity
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        WELCOME TO <span class="bg-gradient-to-r from-brightblue to-neonpurple bg-clip-text text-transparent">MIAWAUG WORLD</span>
+                    </h1>
+                    <p class="text-graytext text-base sm:text-lg leading-relaxed">
+                        Website sederhana yang membahas profil, gaming, YouTube, dan berbagai konten MiawAug dengan nuansa gaming futuristik.
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+                        <button onclick="switchPage('galeri')" class="btn-neon">Lihat Galeri</button>
+                        <button onclick="switchPage('tentang')" class="btn-outline-neon">Tentang Saya</button>
+                    </div>
+
+                    <!-- Social Media Quick Links in Hero -->
+                    <div class="pt-4 flex flex-wrap justify-center md:justify-start gap-3 items-center">
+                        <span class="text-xs uppercase tracking-wider text-graytext font-semibold">Media Sosial:</span>
+                        <a href="https://youtube.com/@MiawAug" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-red-600/20 border border-red-500/40 text-red-300 hover:bg-red-600/40 hover:text-white transition text-xs font-semibold flex items-center gap-1.5">
+                            ▶ YouTube
+                        </a>
+                        <a href="https://instagram.com/miawaug" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-pink-600/20 border border-pink-500/40 text-pink-300 hover:bg-pink-600/40 hover:text-white transition text-xs font-semibold flex items-center gap-1.5">
+                            📸 Instagram
+                        </a>
+                        <a href="https://discord.gg/miawaug" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-indigo-600/20 border border-indigo-500/40 text-indigo-300 hover:bg-indigo-600/40 hover:text-white transition text-xs font-semibold flex items-center gap-1.5">
+                            💬 Discord
+                        </a>
+                        <a href="https://tiktok.com/@miawaug" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cyan-600/20 border border-cyan-500/40 text-cyan-300 hover:bg-cyan-600/40 hover:text-white transition text-xs font-semibold flex items-center gap-1.5">
+                            🎵 TikTok
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 flex justify-center z-10 hero-image">
+                    <img src="assets/img/miawaug.jpg" alt="Foto MiawAug / Reggie" onerror="this.src='https://placehold.co/320x380/0f172a/38bdf8?text=MiawAug+Reggie'">
+                </div>
+            </section>
+
+            <!-- Explore / Kategori Section (6 Items) -->
+            <section class="space-y-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-white section-title inline-block">Explore MiawAug</h2>
+                    <p class="text-graytext text-sm sm:text-base mt-3">Jelajahi berbagai kategori konten seru dan menghibur setiap hari.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Item 1 -->
+                    <div class="card-glass p-6 text-center space-y-4 cursor-pointer" onclick="switchPage('jaringan')">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-400/30 flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                            🎮
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Gaming</h3>
+                        <p class="text-graytext text-sm leading-relaxed">Berbagai video walkthrough game populer dengan aksi seru dan menegangkan.</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="card-glass p-6 text-center space-y-4 cursor-pointer" onclick="switchPage('youtube')">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-400/30 flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                            🎥
+                        </div>
+                        <h3 class="text-xl font-bold text-white">YouTube</h3>
+                        <p class="text-graytext text-sm leading-relaxed">Kanal YouTube utama dengan ribuan video hiburan konsisten setiap hari.</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="card-glass p-6 text-center space-y-4 cursor-pointer" onclick="switchPage('jaringan')">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-400/30 flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                            📺
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Streaming</h3>
+                        <p class="text-graytext text-sm leading-relaxed">Sesi siaran langsung berinteraksi langsung bersama para penggemar setia.</p>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="card-glass p-6 text-center space-y-4 cursor-pointer" onclick="switchPage('jaringan')">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-400/30 flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                            👻
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Horror Game</h3>
+                        <p class="text-graytext text-sm leading-relaxed">Petualangan menegangkan penuh jumpscare dan reaksi seru menghadapi hantu.</p>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="card-glass p-6 text-center space-y-4 cursor-pointer" onclick="switchPage('jaringan')">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-400/30 flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                            😂
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Entertainment</h3>
+                        <p class="text-graytext text-sm leading-relaxed">Momen kocak, tingkah laku lucu, dan glitch game yang mengundang gelak tawa.</p>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="card-glass p-6 text-center space-y-4 cursor-pointer" onclick="switchPage('kontak')">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-400/30 flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                            🤝
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Collaboration</h3>
+                        <p class="text-graytext text-sm leading-relaxed">Proyek kolaborasi menarik bersama kreator dan brand terkemuka.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= TENTANG ================= -->
+        <div id="page-tentang" class="page-content hidden space-y-12 animate-fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-blue-500/20 pb-6 gap-4">
+                <div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white">👤 Tentang MiawAug</h1>
+                    <p class="text-graytext mt-1">Mengenal lebih dekat profil dan latar belakang konten kreator gaming.</p>
+                </div>
+                <a href="#" onclick="switchPage('beranda')" class="text-sm font-medium text-brightblue hover:underline flex items-center gap-1">🏠 Kembali ke Beranda</a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <!-- Profile Card / Table -->
+                <div class="card-glass p-6 sm:p-8 space-y-6">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">📋 Statistik Profil</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <tbody>
+                                <tr class="border-b border-blue-500/10"><th class="py-3.5 px-4 font-semibold text-brightblue">Nama</th><td class="py-3.5 px-4 text-white font-medium">MiawAug</td></tr>
+                                <tr class="border-b border-blue-500/10"><th class="py-3.5 px-4 font-semibold text-brightblue">Profesi</th><td class="py-3.5 px-4 text-white font-medium">Konten Kreator</td></tr>
+                                <tr class="border-b border-blue-500/10"><th class="py-3.5 px-4 font-semibold text-brightblue">Bidang</th><td class="py-3.5 px-4 text-white font-medium">Gaming & Entertainment</td></tr>
+                                <tr class="border-b border-blue-500/10"><th class="py-3.5 px-4 font-semibold text-brightblue">Platform</th><td class="py-3.5 px-4 text-white font-medium">YouTube, Instagram, Discord</td></tr>
+                                <tr><th class="py-3.5 px-4 font-semibold text-brightblue">Negara</th><td class="py-3.5 px-4 text-white font-medium">🇮🇩 Indonesia</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Social Media Links Block -->
+                    <div class="pt-2">
+                        <h4 class="text-sm font-semibold text-gray-300 mb-3">Tautan Resmi Medsos:</h4>
+                        <div class="flex flex-wrap gap-2.5">
+                            <a href="https://youtube.com/@MiawAug" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-red-950/40 border border-red-500/30 text-red-300 hover:bg-red-600 hover:text-white transition text-xs font-semibold flex items-center gap-2">
+                                ▶ YouTube Channel
+                            </a>
+                            <a href="https://instagram.com/miawaug" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-pink-950/40 border border-pink-500/30 text-pink-300 hover:bg-pink-600 hover:text-white transition text-xs font-semibold flex items-center gap-2">
+                                📸 Instagram @miawaug
+                            </a>
+                            <a href="https://discord.gg/miawaug" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-indigo-300 hover:bg-indigo-600 hover:text-white transition text-xs font-semibold flex items-center gap-2">
+                                💬 Komunitas Discord
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description & Info -->
+                <div class="space-y-6">
+                    <div class="card-glass p-6 sm:p-8 space-y-4">
+                        <h3 class="text-xl font-bold text-white">✨ Perjalanan Kreatif</h3>
+                        <p class="text-graytext leading-relaxed">
+                            MiawAug adalah salah satu konten kreator gaming terkemuka di Indonesia yang dikenal karena gaya penyampaiannya yang ramah, santai, positif, dan menghibur. Kanal YouTube-nya menjadi tujuan utama bagi para pencinta game dari berbagai kalangan usia.
+                        </p>
+                        <p class="text-graytext leading-relaxed">
+                            Dengan dedikasi dan konsistensi tinggi setiap hari, MiawAug terus menginspirasi komunitas gamer di tanah air untuk menghadirkan tayangan yang bermutu dan ramah penonton.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Images Grid -->
+            <div class="space-y-6 pt-4">
+                <h2 class="text-2xl font-bold text-white section-title-left">Galeri Foto Pendukung</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="card-glass p-3 overflow-hidden">
+                        <img src="assets/img/miawaug-1.jpg" alt="Gaming Setup" class="rounded-xl w-full h-56 object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/400x300/2563eb/ffffff?text=Gaming+Setup'">
+                        <div class="p-3 text-center"><span class="text-sm font-semibold text-white">Gaming Setup Professional</span></div>
+                    </div>
+                    <div class="card-glass p-3 overflow-hidden">
+                        <img src="assets/img/miawaug-2.jpg" alt="Studio" class="rounded-xl w-full h-56 object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/400x300/0f172a/38bdf8?text=Studio+MiawAug'">
+                        <div class="p-3 text-center"><span class="text-sm font-semibold text-white">Studio Pembuatan Konten</span></div>
+                    </div>
+                    <div class="card-glass p-3 overflow-hidden">
+                        <img src="assets/img/miawaug-3.jpg" alt="Content" class="rounded-xl w-full h-56 object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/400x300/1e293b/8b5cf6?text=Content+Creation'">
+                        <div class="p-3 text-center"><span class="text-sm font-semibold text-white">Aktivitas Kreatif Harian</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= GAMING (jaringan.html) ================= -->
+        <div id="page-jaringan" class="page-content hidden space-y-10 animate-fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-blue-500/20 pb-6 gap-4">
+                <div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white">🎮 Gaming MiawAug</h1>
+                    <p class="text-graytext mt-1">Katalog game populer dan konten aksi seru bersama MiawAug.</p>
+                </div>
+                <a href="#" onclick="switchPage('beranda')" class="text-sm font-medium text-brightblue hover:underline flex items-center gap-1">🏠 Kembali ke Beranda</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-glass overflow-hidden flex flex-col">
+                    <img src="assets/img/miawaug-1.jpg" alt="Gameplay" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x250/2563eb/ffffff?text=Gameplay'">
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-white flex items-center gap-2">🎮 Gameplay</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-brightblue border border-blue-500/30">Action / RPG</span>
+                        </div>
+                        <p class="text-graytext text-sm flex-grow leading-relaxed">Menjelajahi berbagai alur cerita game seru, aksi menantang, dan petualangan dunia terbuka bersama penonton setia.</p>
+                        <button onclick="switchPage('youtube')" class="w-full btn-outline-neon text-sm py-2.5">Lihat Konten</button>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card-glass overflow-hidden flex flex-col">
+                    <img src="assets/img/miawaug-2.jpg" alt="Horror Game" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x250/0f172a/38bdf8?text=Horror+Game'">
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-white flex items-center gap-2">👻 Horror Game</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">Survival</span>
+                        </div>
+                        <p class="text-graytext text-sm flex-grow leading-relaxed">Video penuh ketegangan, jumpscare mengejutkan, dan reaksi seru saat menghadapi hantu atau monster menegangkan.</p>
+                        <button onclick="switchPage('youtube')" class="w-full btn-outline-neon text-sm py-2.5">Lihat Konten</button>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card-glass overflow-hidden flex flex-col">
+                    <img src="assets/img/miawaug-3.jpg" alt="Funny Gaming" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/400x250/3b82f6/ffffff?text=Funny+Gaming'">
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-white flex items-center gap-2">😂 Funny Gaming</h3>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-brightblue border border-blue-500/30">Comedy</span>
+                        </div>
+                        <p class="text-graytext text-sm flex-grow leading-relaxed">Momen-momen kocak, glitch tak terduga, dan tingkah laku lucu yang mengundang gelak tawa di setiap sesi bermain.</p>
+                        <button onclick="switchPage('youtube')" class="w-full btn-outline-neon text-sm py-2.5">Lihat Konten</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= YOUTUBE (iot-arduino.html) ================= -->
+        <div id="page-youtube" class="page-content hidden space-y-10 animate-fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-blue-500/20 pb-6 gap-4">
+                <div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white">🎥 MiawAug di YouTube</h1>
+                    <p class="text-graytext mt-1">Pusat konten video hiburan gaming berkualitas tinggi dan konsisten setiap hari.</p>
+                </div>
+                <a href="#" onclick="switchPage('beranda')" class="text-sm font-medium text-brightblue hover:underline flex items-center gap-1">🏠 Kembali ke Beranda</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video Card 1 -->
+                <div class="card-glass overflow-hidden flex flex-col">
+                    <div class="overflow-hidden relative">
+                        <img src="assets/img/miawaug-1.jpg" alt="Video 1" class="w-full h-60 object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/600x350/1e293b/38bdf8?text=Video+Terbaru'">
+                        <div class="absolute inset-0 bg-blue-900/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <span class="px-4 py-2 bg-neonblue text-white font-semibold rounded-lg shadow-lg">▶ Watch Video</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Petualangan Seru Game Terbaru!</h3>
+                            <p class="text-graytext text-sm leading-relaxed">Menyelami dunia terbuka dengan grafis menakjubkan dan misi penuh teka-teki bersama MiawAug.</p>
+                        </div>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="inline-block pt-2 text-brightblue font-semibold text-sm hover:underline">Watch on YouTube →</a>
+                    </div>
+                </div>
+                <!-- Video Card 2 -->
+                <div class="card-glass overflow-hidden flex flex-col">
+                    <div class="overflow-hidden relative">
+                        <img src="assets/img/miawaug-2.jpg" alt="Video 2" class="w-full h-60 object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/600x350/2563eb/ffffff?text=Video+Indie+Game'">
+                        <div class="absolute inset-0 bg-blue-900/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <span class="px-4 py-2 bg-neonblue text-white font-semibold rounded-lg shadow-lg">▶ Watch Video</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Eksplorasi Game Indie Unik & Menantang</h3>
+                            <p class="text-graytext text-sm leading-relaxed">Menemukan permata tersembunyi dari developer independen dengan gameplay yang kreatif dan adiktif.</p>
+                        </div>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="inline-block pt-2 text-brightblue font-semibold text-sm hover:underline">Watch on YouTube →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= GALERI (karya-proyek.html) ================= -->
+        <div id="page-galeri" class="page-content hidden space-y-10 animate-fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-blue-500/20 pb-6 gap-4">
+                <div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white">💡 Galeri MiawAug</h1>
+                    <p class="text-graytext mt-1">Koleksi foto eksklusif, screenshot gameplay, dan aktivitas konten kreatif.</p>
+                </div>
+                <a href="#" onclick="switchPage('beranda')" class="text-sm font-medium text-brightblue hover:underline flex items-center gap-1">🏠 Kembali ke Beranda</a>
+            </div>
+
+            <!-- CSS Grid Gallery with hover overlay -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-card card-glass">
+                    <img src="assets/img/miawaug-1.jpg" alt="Foto Gaming" onerror="this.src='https://placehold.co/600x400/2563eb/ffffff?text=Foto+Gaming'">
+                    <div class="gallery-overlay">
+                        <span class="text-xs text-brightblue font-semibold uppercase tracking-wider">Kategori Gaming</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Sesi Gaming Profesional</h3>
+                        <p class="text-graytext text-sm mt-1">Suasana ketika merekam video game dengan peralatan berkualitas tinggi.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-card card-glass">
+                    <img src="assets/img/miawaug-2.jpg" alt="Screenshot Video" onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=Screenshot+Video'">
+                    <div class="gallery-overlay">
+                        <span class="text-xs text-brightblue font-semibold uppercase tracking-wider">Kategori YouTube</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Screenshot Video Pilihan</h3>
+                        <p class="text-graytext text-sm mt-1">Tangkapan layar adegan seru di dalam game populer.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-card card-glass">
+                    <img src="assets/img/miawaug-3.jpg" alt="Foto Kegiatan" onerror="this.src='https://placehold.co/600x400/1e293b/8b5cf6?text=Foto+Kegiatan'">
+                    <div class="gallery-overlay">
+                        <span class="text-xs text-brightblue font-semibold uppercase tracking-wider">Kategori Aktivitas</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Foto Kegiatan Harian</h3>
+                        <p class="text-graytext text-sm mt-1">Aktivitas di balik layar pembuatan konten YouTube.</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-card card-glass">
+                    <img src="assets/img/miawaug-4.jpg" alt="Thumbnail Konten" onerror="this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Thumbnail+Konten'">
+                    <div class="gallery-overlay">
+                        <span class="text-xs text-brightblue font-semibold uppercase tracking-wider">Kategori Kreatif</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Thumbnail Konten Eksklusif</h3>
+                        <p class="text-graytext text-sm mt-1">Contoh desain sampul video yang menarik perhatian penonton.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KONTAK (kontak.html) ================= -->
+        <div id="page-kontak" class="page-content hidden space-y-10 animate-fade-up">
+            <div class="max-w-2xl mx-auto card-glass p-8 sm:p-10 space-y-8">
+                <div class="flex justify-between items-center border-b border-blue-500/20 pb-4">
+                    <div>
+                        <h1 class="text-3xl font-extrabold text-white">📬 Kontak</h1>
+                        <p class="text-graytext text-sm mt-1">Kirimkan pesan atau pertanyaan kepada kami.</p>
+                    </div>
+                    <a href="#" onclick="switchPage('beranda')" class="text-sm font-medium text-brightblue hover:underline">🏠 Beranda</a>
+                </div>
+
+                <form onsubmit="handleSubmit(event)" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Nama</label>
+                        <input type="text" required class="input-gaming" placeholder="Masukkan nama Anda">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Email</label>
+                        <input type="email" required class="input-gaming" placeholder="nama@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Kategori Pesan</label>
+                        <select class="input-gaming">
+                            <option value="umum" class="bg-darkbg text-white">Pertanyaan Umum</option>
+                            <option value="kolaborasi" class="bg-darkbg text-white">Kolaborasi / Bisnis</option>
+                            <option value="saran" class="bg-darkbg text-white">Saran & Masukan</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Pesan</label>
+                        <textarea rows="4" required class="input-gaming" placeholder="Tuliskan pesan Anda..."></textarea>
+                    </div>
+                    <button type="submit" class="w-btn w-full btn-neon py-3.5 text-center font-bold">Kirim Pesan</button>
+                </form>
+
+                <div id="success-msg" class="hidden bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 p-4 rounded-xl text-center font-medium shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    Pesan berhasil dikirim! Terima kasih telah menghubungi kami.
+                </div>
+
+                <div class="text-center pt-4 border-t border-blue-500/10 text-graytext text-sm space-y-3">
+                    <p>Untuk informasi lebih lanjut, silakan kunjungi platform resmi MiawAug:</p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <a href="https://youtube.com/@MiawAug" target="_blank" rel="noopener noreferrer" class="text-xs px-3 py-1.5 rounded-lg bg-red-950/40 border border-red-500/30 text-red-300 hover:bg-red-600 hover:text-white transition font-semibold">YouTube</a>
+                        <a href="https://instagram.com/miawaug" target="_blank" rel="noopener noreferrer" class="text-xs px-3 py-1.5 rounded-lg bg-pink-950/40 border border-pink-500/30 text-pink-300 hover:bg-pink-600 hover:text-white transition font-semibold">Instagram</a>
+                        <a href="https://discord.gg/miawaug" target="_blank" rel="noopener noreferrer" class="text-xs px-3 py-1.5 rounded-lg bg-indigo-950/40 border border-indigo-500/30 text-indigo-300 hover:bg-indigo-600 hover:text-white transition font-semibold">Discord</a>
+                        <a href="https://tiktok.com/@miawaug" target="_blank" rel="noopener noreferrer" class="text-xs px-3 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-600 hover:text-white transition font-semibold">TikTok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-cardbg/80 backdrop-blur-md border-t border-blue-500/20 text-white py-8 mt-16 text-center space-y-4">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <h3 class="text-xl font-extrabold bg-gradient-to-r from-brightblue to-neonpurple bg-clip-text text-transparent">MiawAug</h3>
+            <p class="text-graytext text-sm">Gaming • Entertainment • Creativity</p>
+            <div class="flex flex-wrap justify-center gap-4 pt-1">
+                <a href="https://youtube.com/@MiawAug" target="_blank" rel="noopener noreferrer" class="text-graytext hover:text-brightblue transition text-sm font-medium">▶ YouTube</a>
+                <a href="https://instagram.com/miawaug" target="_blank" rel="noopener noreferrer" class="text-graytext hover:text-brightblue transition text-sm font-medium">📸 Instagram</a>
+                <a href="https://discord.gg/miawaug" target="_blank" rel="noopener noreferrer" class="text-graytext hover:text-brightblue transition text-sm font-medium">💬 Discord</a>
+                <a href="https://tiktok.com/@miawaug" target="_blank" rel="noopener noreferrer" class="text-graytext hover:text-brightblue transition text-sm font-medium">🎵 TikTok</a>
+            </div>
+            <p class="text-graytext text-xs pt-4 border-t border-blue-500/15">© 2026 MiawAug Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(p => {
+                p.classList.add('hidden');
+                p.classList.remove('animate-fade-up');
+            });
+
+            // Show selected page with animation
+            const target = document.getElementById('page-' + pageId);
+            if (target) {
+                target.classList.remove('hidden');
+                void target.offsetWidth; // Trigger reflow for animation restart
+                target.classList.add('animate-fade-up');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update nav active styles
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.classList.remove('text-brightblue', 'bg-blue-950/40', 'border', 'border-blue-500/30');
+                btn.classList.add('text-graytext');
+            });
+            const activeBtn = document.getElementById('nav-' + pageId);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-graytext');
+                activeBtn.classList.add('text-brightblue', 'bg-blue-950/40', 'border', 'border-blue-500/30');
+            }
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('success-msg');
+            msg.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 4500);
+        }
+    </script>
+</body>
+</html>

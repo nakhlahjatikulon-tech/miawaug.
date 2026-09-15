@@ -1,0 +1,241 @@
+/* Custom CSS for Neon, Glassmorphism, and Animations */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Background Glowing Blobs */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            background: #2563eb;
+            filter: blur(140px);
+            opacity: 0.18;
+            top: 5%;
+            left: 5%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: #8b5cf6;
+            filter: blur(160px);
+            opacity: 0.15;
+            bottom: 10%;
+            right: 5%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Navbar */
+        .navbar-glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Logo Glow */
+        .logo-glow {
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+            transition: transform 0.3s ease;
+        }
+        .logo-glow:hover {
+            transform: scale(1.05);
+        }
+
+        /* Custom Hero Background as requested */
+        .hero-bg {
+            background: 
+                linear-gradient(90deg, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.65), rgba(2, 6, 23, 0.9)),
+                url("../image/3535fcde83bd6afff8a0c0421aee549e.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: #2563eb;
+            filter: blur(120px);
+            opacity: 0.2;
+            top: -50px;
+            left: -50px;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Card */
+        .card-glass {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(96, 165, 250, 0.15);
+            border-radius: 18px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-glass:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.35), 0 0 50px rgba(139, 92, 246, 0.15);
+        }
+
+        /* Hero Image Floating Animation as requested */
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .hero-image img {
+            width: 320px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid #38bdf8;
+            box-shadow: 0 0 20px #2563eb, 0 0 50px rgba(139, 92, 246, 0.5);
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        /* Fade Up Animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        /* Neon Buttons */
+        .btn-neon {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            color: #ffffff;
+            padding: 13px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 25px #2563eb, 0 0 45px rgba(124, 58, 237, 0.6);
+        }
+
+        .btn-outline-neon {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            padding: 13px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-neon:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: #38bdf8;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Section Title Neon underline */
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 3px;
+            margin: 10px auto 0 auto;
+            background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+            box-shadow: 0 0 10px #38bdf8;
+        }
+
+        .section-title-left::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 3px;
+            margin: 10px 0 0 0;
+            background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+            box-shadow: 0 0 10px #38bdf8;
+        }
+
+        /* Gallery Overlay */
+        .gallery-card {
+            overflow: hidden;
+            border-radius: 18px;
+            position: relative;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(2, 6, 23, 0.9), rgba(15, 23, 42, 0.2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Form Inputs Modern Gaming */
+        .input-gaming {
+            background: rgba(15, 23, 42, 0.8);
+            color: #f8fafc;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 12px 16px;
+            width: 100%;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-gaming:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
