@@ -1,4 +1,4 @@
-/* Custom CSS for Neon, Glassmorphism, and Animations */
+ <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         body {
@@ -60,7 +60,7 @@
         .hero-bg {
             background: 
                 linear-gradient(90deg, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.65), rgba(2, 6, 23, 0.9)),
-                url("../image/3535fcde83bd6afff8a0c0421aee549e.jpg");
+                url("assets/img/bg-miawaug.jpg");
             background-size: cover;
             background-position: center;
             border-radius: 20px;
@@ -239,3 +239,4 @@
             border-color: #38bdf8;
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
         }
+    </style>
